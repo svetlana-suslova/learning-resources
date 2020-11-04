@@ -1,12 +1,12 @@
 <template>
-    <button :type="type" :class="mode">
+    <button :class="mode">
       <slot></slot>
     </button>
 </template>
 
 <script>
 export default {
-    props: ['type', 'mode']
+    props: ['mode']
 }
 </script>
 
@@ -18,7 +18,6 @@ button {
   border: 1px solid #3a0061;
   color: white;
   cursor: pointer;
-  border-radius: 12px;
 }
 
 button:hover,
@@ -26,15 +25,24 @@ button:active {
   background-color: #270041;
   border-color: #270041;
 }
+button:focus {
+  outline: none;
+}
 
 .flat {
   background-color: transparent;
   color: #3a0061;
-  border: none;
+  border: 1px solid transparent;
 }
 
 .flat:hover,
 .flat:active {
   background-color: #edd2ff;
+  border: 1px solid transparent;
+}
+
+.flat:focus {
+  background-color: #edd2ff;
+  outline: none;
 }
 </style>
